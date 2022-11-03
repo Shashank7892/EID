@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  {% load static %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'style7.css' %}">
+</head>
+
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-box">
+    <div class="center">
+<div class="container">
+
+    {% if data.addharstatus == "notuploaded" %}
+    <p class="big" >Aadhaar = <a href="{% url 'EID:uploadfiles' value='Aadhaar'%}"><button class="btn" type="button" name="button">Upload</button></a> </p><br>
+
+    {% elif data.addharstatus == "Pending" %}
+    <p class="big">Aadhaar = {{data.addharstatus}}</p>
+    {% else %}
+  <p class="big">Generate: <input type="submit" class="btn" name="btn" value="aadhaar"></p> <br>
+    {% endif %}
+    </div>
+<div class="container">
+
+    {% if data.passportstatus == "notuploaded" %}
+    <p class="big">passport = <a href="{% url 'EID:uploadfiles' value='Passport'%}"><button class="btn" type="button" name="button">Upload</button></a> </p>
+    {% elif data.passportstatus == "Pending" %}
+    <p class="big">passport = {{data.passportstatus}}</p>
+    {% else %}
+    <p class="big">Generate: <input type="submit" class="btn" name="btn" value="passport"><br></p>
+    {% endif %}
+</div>
+<div class="container">
+    {% if data.dlstatus == "notuploaded" %}
+    <p class="big">Driving License = <a href="{% url 'EID:uploadfiles' value='Dl'%}"><button class="btn" type="button" name="button">Upload</button></a> </p>
+
+    {% elif data.dlstatus == "Pending" %}
+    <p class="big">Driving License = {{data.dlstatus}}</p>
+    {% else %}
+      <p class="big">Generate: <input type="submit" class="btn" name="btn" value="dl"><br></p>
+    {% endif %}
+  </div>
+  <div class="container">
+
+    {% if data.pancardstatus == "notuploaded" %}
+    <p class="big">Pan Card = <a href="{% url 'EID:uploadfiles' value='Pancard'%}"><button class="btn" type="button" name="button">Upload</button></a> </p>
+
+    {% elif data.pancardstatus == "Pending" %}
+    <p class="big">Pan Card = {{data.pancardstatus}}</p>
+    {% else %}
+    <p class="big">Generate: <input type="submit" class="btn" name="btn" value="pancard"><br></p>
+    {% endif %}
+</div>
+<div class="container">
+
+
+    {% if data.voteridstatus == "notuploaded" %}
+    <p class="big">Voter ID = <a href="{% url 'EID:uploadfiles' value='Voterid'%}"><button class="btn" type="button" name="button">Upload</button></a> </p>
+
+    {% elif data.voteridstatus == "Pending" %}
+    <p class="big">Voter ID = {{data.voteridstatus}}</p>
+    {% else %}
+    <p class="big">Generate: <input type="submit" class="btn" name="btn" value="voterid"><br></p>
+    {% endif %}
+</div>
+<div class="container">
+
+
+    {% if data.rationcardstatus == "notuploaded" %}
+    <p class="big">Ration Card = <a href="{% url 'EID:uploadfiles' value='Rationcard'%}"><button class="btn" type="button" name="button">Upload</button></a> </p>
+
+    {% elif data.rationcardstatus == "Pending" %}
+    <p class="big">Ration Card = {{data.rationcardstatus}}</p>
+    {% else %}
+    <p class="big">Generate: <input type="submit" class="btn" name="btn" value="rationcard"><br></p>
+    {% endif %}
+</div>
+<div class="container">
+
+
+    {% if data.buspassstatus == "notuploaded" %}
+    <p class="big">Bus Pass = <a href="{% url 'EID:uploadfiles' value='Buspass'%}"><button class="btn" type="button" name="button">Upload</button></a> </p>
+
+    {% elif data.buspassstatus == "Pending" %}
+    <p class="big">Bus Pass = {{data.buspassstatus}}</p>
+    {% else %}
+    <p class="big">Generate: <input type="submit" class="btn" name="btn" value="buspass"><br></p>
+    {% endif %}
+  </div>
+  <div id="left">
+    {% if svg %}
+    {{ svg|safe }}
+    {% endif %}
+  </div>
+</div>
+  </form>
+</body>
+</html>

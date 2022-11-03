@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style11.css' %}">
+  </head>
+  <body>
+    <div class="form-box">
+    <div class="center">
+    {% if data.addharstatus == "Pending" %}
+    <p class="big">Aadhaar = <a href="{% url 'EID:aproaadhaar' value=data.phoneno %}"><button class="button"  type="button" name="button">Approve</button></a>   <a href="{% url 'EID:disaadhaar' value=data.phoneno %}"><button class="button"  type="button" name="button">Disapprove</button></a>  <a href={{adh}}><button class="button"  type="button" name="button">View</button></a></p>
+    {% else %}
+    <p class="big">Aadhaar = {{data.addharstatus}}</p>
+    {% endif %}
+
+    {% if data.passportstatus == "Pending" %}
+    <p class="big">passport = <a href="{% url 'EID:aprpassport' value=data.phoneno %}"><button class="button"  type="button" name="button">Approve</button></a>    <a href="{% url 'EID:dispassport' value=data.phoneno %}"><button class="button"  type="button" name="button">Disapprove</button></a>  <a href={{ppt}}><button class="button"  type="button" name="button">View</button></a> </p>
+    {% else %}
+    <p class="big">passport = {{data.passportstatus}}</p>
+    {% endif %}
+
+    {% if data.dlstatus == "Pending" %}
+    <p class="big">Driving License = <a href="{% url 'EID:aprdl' value=data.phoneno %}"><button class="button" type="button" name="button">Approve</button></a>   <a href="{% url 'EID:disdl' value=data.phoneno %}"><button class="button" type="button" name="button">Disapprove</button></a>  <a href={{dld}}><button class="button"  type="button" name="button">View</button></a></p>
+    {% else %}
+    <p>Driving License = {{data.dlstatus}}</p>
+    {% endif %}
+
+    {% if data.pancardstatus == "Pending" %}
+    <p class="big">Pan Card = <a href="{% url 'EID:aprpancard' value=data.phoneno %}"><button class="button"  type="button" name="button">Approve</button></a>   <a href="{% url 'EID:dispancard' value=data.phoneno %}"><button class="button"  type="button" name="button">Disapprove</button></a>  <a href={{pdc}}><button class="button"  type="button" name="button">View</button></a></p>
+    {% else %}
+    <p class="big">Pan Card = {{data.pancardstatus}}</p>
+    {% endif %}
+
+    {% if data.voteridstatus == "Pending" %}
+    <p class="big">Voter ID = <a href="{% url 'EID:aprvoterid' value=data.phoneno%}"><button class="button"  type="button" name="button">Approve</button></a>   <a href="{% url 'EID:disvoterid' value=data.phoneno%}"><button class="button"  type="button" name="button">Disapprove</button></a>  <a href={{vid}}><button class="button"  type="button" name="button">View</button></a></p>
+    {% else %}
+    <p class="big">Voter ID = {{data.voteridstatus}}</p>
+    {% endif %}
+
+    {% if data.rationcardstatus == "Pending" %}
+    <p class="big">Ration Card = <a href="{% url 'EID:aprrationcard' value=data.phoneno%}"><button class="button"  type="button" name="button">Approve</button></a>   <a href="{% url 'EID:disrationcard' value=data.phoneno%}"><button class="button"  type="button" name="button">Disapprove</button></a>  <a href={{rcd}}><button class="button"  type="button" name="button">View</button></a></p>
+    {% else %}
+    <p class="big">Ration Card  = {{data.rationcardstatus}}</p>
+    {% endif %}
+
+    {% if data.buspassstatus == "Pending" %}
+    <p class="big">Bus Pass= <a href="{% url 'EID:aprbuspass' value=data.phoneno%}"><button class="button" type="button" name="button">Approve</button></a>   <a href="{% url 'EID:disbuspass' value=data.phoneno%}"><button class="button" type="button" name="button">Disapprove</button></a>  <a href={{bpd}}><button class="button" type="button" name="button">View</button></a></p>
+    {% else %}
+    <p class="big">Bus Pass = {{data.buspassstatus}}</p>
+    {% endif %}
+  </div>
+</div>
+  </body>
+</html>

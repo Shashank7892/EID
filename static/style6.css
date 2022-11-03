@@ -1,0 +1,53 @@
+.form-box:before {
+	background-image: url("images/u.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+}
+.button {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.center {
+ background-color: rgba(0, 0, 0, 0.5);
+ margin: auto auto;
+ padding: 40px;
+ border-radius: 5px;
+ box-shadow: 0 0 10px #000;
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ width: 500px;
+ height: 600px;
+ margin: auto;
+ width: 60%;
+ border: 5px solid #708090;
+ padding: 10px;
+}
+a.big {
+  line-height: 3.8;
+  font-size: 250%;
+  margin-right:100px;
+  word-spacing: 9px;
+  text-align: left;
+  margin-top: -2px;
+margin-bottom: 1rem;
+color: #f0f3f4;

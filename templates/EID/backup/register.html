@@ -1,0 +1,22 @@
+{% extends "EID/base.html" %}
+{% load static %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+      <form method="post">
+        {% csrf_token %}
+        <label for="">USERNAME</label>
+        <input type="text" name="username" value="">
+        <label for="">Gmail</label>
+        <input type="email" name="gmail" value="">
+        <label for="">Phone No</label>
+        <input type="text" name="phoneno" value="">
+        <label for="">DOB</label>
+        <input type="date" name="dob" value="">
+        <label for="">password</label>
+        <input type="password" name="password" value="">
+        <input type="submit" name="" value="Submit">
+      </form>
+    </div>
+  </div>
+{% endblock %}

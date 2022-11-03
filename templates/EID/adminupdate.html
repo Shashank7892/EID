@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+table, th, td {
+  border: 3px solid #F0F8FF ;
+}
+table {
+  width: 100%;
+}
+th {
+  height: 70px;
+  width: 100%;
+  color:white;
+}
+td{
+  height:70px;
+  width: 100%;
+  color:white;
+}
+</style>
+</head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style10.css' %}">
+  </head>
+  <body>
+    <div class="form-box">
+    <div class="center">
+    <div class="container">
+    {% if data %}
+    <table>
+      <thead>
+        <th>USER ID</th>
+        <th>VERIFY</th>
+      </thead>
+
+      {% for i in data %}
+        <tr>
+          <td>{{i.phoneno}}</td>
+          <td><a class="big" href="{% url 'EID:vd' value=i.phoneno %}"><button class="button button5" type="button">Verify</button></a></td>
+        </tr>
+      {% endfor %}
+    </table>
+    </div>
+    </div>
+    </div>
+    {% else %}
+      <h1>All the records are Updated</h1>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-box">
+      <div class="header-text">
+        Login
+      </div><input placeholder="Your Email Address" type="email" name="gmail">
+      <input placeholder="Your Password" type="password" name="password">
+      <button>login</button>
+    </div>
+    {% csrf_token %}
+  </form>
+</body>
+</html>
